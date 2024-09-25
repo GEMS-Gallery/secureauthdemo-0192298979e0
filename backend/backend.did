@@ -1,0 +1,14 @@
+type BlogPost = 
+ record {
+   content: text;
+   createdAt: int;
+   id: nat;
+   title: text;
+ };
+service : {
+  createPost: (text, text) -> (nat);
+  deletePost: (nat) -> (bool);
+  getPost: (nat) -> (opt BlogPost) query;
+  getPosts: () -> (vec BlogPost) query;
+  updatePost: (nat, text, text) -> (bool);
+}
